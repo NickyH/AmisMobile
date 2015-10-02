@@ -1,0 +1,118 @@
+//globals
+
+@oimt-blue: #428BCA;
+@oimt-yellow: #fcfc06;
+@oimt-white: #ffffff;
+@oimt-green: #5cb85c;
+
+@oimt-very-light-grey: #edefef;
+@oimt-light-grey: #b1bab9;
+@oimt-medium-grey: #959998;
+@oimt-medium-dark-grey: #757575;
+
+@top-bar-colour: #428BCA;
+
+//font sizes
+@font-size-very-large: 30px;
+@font-size-large: 20px;
+@font-size-medium: 14px;
+@font-size-small: 10px;
+
+@grey-darker: #303030;
+@grey-dark: #4D4D4D;
+@grey-medium-dark: #828282;
+@grey-medium: #CCCCCC;
+@grey-light: #e5e5e5;
+
+// Media Queries
+
+// responsive
+@widthNarrow:         ~"(max-width: 320px)";
+@widthMedium:         ~"(max-width: 600px)";
+@widthMediumLarge:    ~"(min-width: 601px) and (max-width: 768px)";
+@widthMediumLargePlus:~"(min-width: 769px) and (max-width: 1023px)";
+@widthLarge:          ~"(min-width: 1024px)";
+
+@heightShort:         ~"(max-height: 479px)";
+@heightShortMedium:   ~"(min-height: 480px) and (max-height: 560px)";
+@heightMedium:        ~"(max-height: 700px)";
+@heightTall:          ~"(min-height: 768px)";
+@mediaScreen:         ~"only screen and ";
+
+// condition:  is the tablet rotated portrait or landscape?;
+@tabletLandscape:      ~"(orientation: landscape)";
+@tabletPortrait:       ~"(orientation: portrait)";
+
+// set the min-width and height
+@tabletLandscapeWidth:               ~"(min-width: 1024px) and (orientation: landscape)";
+@tabletLandscapeHeight:              ~"(min-height: 768px) and (orientation: landscape)";
+
+@tabletPortraitWidth:                ~"(min-width: 768px) and (orientation: portrait)";
+@tabletPortraitHeight:               ~"(min-height: 1024px) and (orientation: portrait)";
+
+
+body, html {
+  height: 100%;
+}
+
+#body-content {
+  margin-top: 50px;
+  padding-top: 50px;
+  padding-bottom: 80px;
+    .menu {
+      a img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.thumbnail {
+  div {
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+  }
+  margin-bottom: 30px;
+}
+
+.thumbnail:hover {
+  text-decoration: none;
+}
+
+.list-group-item-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+}
+
+.list-group-item-info {
+  color: #31708f;
+  background-color: #d9edf7;
+}
+
+.list-group-item-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+}
+
+.list-group-item-danger {
+  color: #a94442;
+  background-color: #f2dede;
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+.btn {
+  &.full-width {
+    width: 100%;
+  }
+}
