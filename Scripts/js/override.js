@@ -41,6 +41,13 @@ function insert_tasklist() {
   });
 }
 
+function insert_taskmap() {
+  $('#body-content').empty();
+  $.get('map_list.html', function(data) {
+      $('#body-content').html(data);
+  });
+}
+
 function insert_form_completion() {
   $('#body-content').empty();
   $.get('form_completion.html', function(data) {

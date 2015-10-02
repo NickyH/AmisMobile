@@ -1,28 +1,5 @@
 //globals
 
-@oimt-blue: #428BCA;
-@oimt-yellow: #fcfc06;
-@oimt-white: #ffffff;
-@oimt-green: #5cb85c;
-
-@oimt-very-light-grey: #edefef;
-@oimt-light-grey: #b1bab9;
-@oimt-medium-grey: #959998;
-@oimt-medium-dark-grey: #757575;
-
-@top-bar-colour: #428BCA;
-
-//font sizes
-@font-size-very-large: 30px;
-@font-size-large: 20px;
-@font-size-medium: 14px;
-@font-size-small: 10px;
-
-@grey-darker: #303030;
-@grey-dark: #4D4D4D;
-@grey-medium-dark: #828282;
-@grey-medium: #CCCCCC;
-@grey-light: #e5e5e5;
 
 // Media Queries
 
@@ -56,13 +33,38 @@ body, html {
 }
 
 #body-content {
+  height: 100%;
+}
+
+.container.map {
+  height: 100%;
+}
+
+.top-half {
+  height: 50%;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin-top: -50px;
+}
+
+.bottom-half {
+  height: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  margin-bottom: -80px;
+}
+
+#body-content {
   margin-top: 50px;
   padding-top: 50px;
   padding-bottom: 80px;
     .menu {
       a img {
-      width: 50px;
-      height: 50px;
+        width: 50px;
+        height: 50px;
     }
   }
 }
