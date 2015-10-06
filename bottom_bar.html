@@ -8,9 +8,10 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">My Tasks <span class="sr-only">(current)</span></a></li>
+          <li class="active"><a href="#" id="goto_tasklist">My Tasks <span class="sr-only">(current)</span></a></li>
           <li><a href="#" id="goto_taskmap">Task Map</a></li>
           <li><a href="#">Search</a></li>
+          <li><a href="#">Synchronise</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
 
@@ -34,4 +35,5 @@
 
 <script>
   $('#goto_taskmap').on('click', insert_taskmap)
+  $('#goto_tasklist').on('click', insert_tasklist)
 </script>
