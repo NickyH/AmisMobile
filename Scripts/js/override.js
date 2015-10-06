@@ -83,3 +83,17 @@ function update_page_name() {
   var current_page = page_name;
   $('#page_name').text(current_page);
 }
+
+function hide_map() {
+  $('.top-half').addClass('hidden');
+  $('.bottom-half').addClass('full-width');
+  $('#btn-hide-map').addClass('hidden');
+  $('#btn-show-map').removeClass('hidden');
+}
+
+function show_map() {
+  $('.top-half').removeClass('hidden');
+  $('.bottom-half').removeClass('full-width');
+  $('#btn-hide-map').removeClass('hidden');
+  $('#btn-show-map').addClass('hidden');
+}

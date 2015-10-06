@@ -6,6 +6,18 @@
     </div>
   </div>
 
+  <div class="map-toolbar">
+
+    <button type="button" class="btn btn-default btn-sm active">All Tasks</button>
+    <button type="button" class="btn btn-default btn-sm">My Tasks</button>
+    <button type="button" class="btn btn-default btn-sm">Current Location</button>
+    <button type="button" class="btn btn-default btn-sm">Select All</button>
+    <button type="button" class="btn btn-default btn-sm">Deselect All</button>
+    <!--right align-->
+    <button type="button" class="btn btn-default btn-sm pull-right" id="btn-hide-map">Hide Map</button>
+    <button type="button" class="btn btn-default btn-sm pull-right hidden" id="btn-show-map">Show Map</button>
+
+  </div>
 
   <div class="bottom-half">
     <div class="row">
@@ -37,6 +49,9 @@
 
 
 <script>
+$('#btn-hide-map').on('click', hide_map);
+$('#btn-show-map').on('click', show_map);
+
 var page_name = "Task Map"
 update_page_name();
 </script>

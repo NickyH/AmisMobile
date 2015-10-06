@@ -46,6 +46,26 @@ body, html {
   right: 0;
   top: 0;
   margin-top: -50px;
+  @media @tabletLandscape {
+    height: 100% !important;
+    width: 60% !important;
+    float: left;
+    margin-right: 0;
+    .map-container {
+      margin-top: 45px;
+      margin-left: -42px;
+    }
+  }
+}
+
+.map-toolbar {
+  z-index: 10;
+  @media @tabletLandscape {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    margin-left: -42px;
+  }
 }
 
 .bottom-half {
@@ -55,6 +75,13 @@ body, html {
   bottom: 0;
   overflow-y: auto;
   margin-bottom: -80px;
+  @media @tabletLandscape {
+    height: 100% !important;
+    width: 40% !important;
+    &.full-width {
+      width: 100% !important;
+    }
+  }
 }
 
 #body-content {
@@ -135,6 +162,14 @@ body, html {
 
   }
 }
+
+.map-toolbar {
+  background-color: lightgrey;
+  max-width: 100%;
+  height: 45px;
+  padding: 8px;
+}
+
 .control-label {
   &.pull-left {
     text-align: left;
