@@ -2,7 +2,8 @@
 
   <div class="top-half">
     <div class="map-container">
-      <img src="../Content/images/map_sample.png">
+      <!-- <img src="../Content/images/map_sample.png"> -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d106082.04683892289!2d151.1210738808594!3d-33.81066238128327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sau!4v1444173089557" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
   </div>
 
@@ -51,6 +52,8 @@
 <script>
 $('#btn-hide-map').on('click', hide_map);
 $('#btn-show-map').on('click', show_map);
+
+$('#goto_completion').on('click', insert_form_completion);
 
 var page_name = "Task Map"
 update_page_name();
