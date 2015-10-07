@@ -34,6 +34,20 @@ body, html {
 
 #body-content {
   height: 100%;
+  margin-top: 50px;
+  padding-top: 50px;
+  padding-bottom: 80px;
+    .menu {
+      max-width: 900px !important;
+      a img {
+        width: 50px;
+        height: 50px;
+    }
+  }
+  .form {
+    margin-top: 20px;
+    padding-bottom: 120px;
+  }
 }
 
 .container.map {
@@ -67,6 +81,7 @@ body, html {
     width: 100% !important;
     float: left;
     margin-right: 0;
+    margin-bottom: 45px;
     .map-container {
       margin-top: 45px;
     }
@@ -112,25 +127,6 @@ body, html {
   }
 }
 
-#body-content {
-  margin-top: 50px;
-  padding-top: 50px;
-  padding-bottom: 80px;
-    .menu {
-      max-width: 900px !important;
-      a img {
-        width: 50px;
-        height: 50px;
-    }
-  }
-  .form {
-    margin-top: -30px;
-    padding-bottom: 120px;
-  }
-}
-
-
-
 .thumbnail {
   div {
     width: 100%;
@@ -171,6 +167,19 @@ body, html {
   vertical-align: top;
 }
 
+.navbar-inverse .navbar-nav>li>a {
+  color: #DEEFEA;
+}
+
+.navbar-inverse .navbar-nav>.dropdown>a .caret {
+  border-top-color: #DEEFEA;
+  border-bottom-color: #DEEFEA;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #DEEFEA;
+}
+
 .navbar .navbar-collapse {
   text-align: center;
 }
@@ -208,4 +217,41 @@ body, html {
 
 .underline {
   border-bottom: 1px solid grey;
+}
+
+.insert-form-header {
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  height: 50px;
+  z-index: 10;
+}
+
+.form-header {
+  height: 100%;
+  width: 100%;
+  background-color: grey;
+  padding: 15px;
+  color: white;
+  .header-left {
+    float: left;
+    text-align: left;
+    .glyphicon {
+      margin-right: 5px;
+      top: 2px !important;
+    }
+  }
+  .header-mid {
+    position: absolute;
+    left: 50%;
+    text-align: center;
+  }
+  .header-right {
+    float: right;
+    text-align: right;
+    .glyphicon {
+      margin-left: 5px;
+      top: 2px !important;
+    }
+  }
 }
