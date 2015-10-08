@@ -34,13 +34,6 @@ function insert_home() {
   });
 }
 
-function insert_tasklist() {
-  $('#body-content').empty();
-  $.get('task_list.html', function(data) {
-      $('#body-content').html(data);
-  });
-}
-
 function insert_taskmap() {
   $('#body-content').empty();
   $.get('map_list.html', function(data) {
@@ -84,15 +77,6 @@ function update_page_name() {
   $('#page_name').text(current_page);
 }
 
-function update_header_text() {
-  var left = text_header_left;
-  var mid = text_header_mid;
-  var right = text_header_right;
-  $('#form-header-left .text-only').text(left);
-  $('#form-header-mid').text(mid);
-  $('#form-header-right .text-only').text(right);
-}
-
 function hide_map() {
   $('.top-half').addClass('hidden');
   $('.bottom-half').addClass('full-width');
@@ -105,11 +89,4 @@ function show_map() {
   $('.bottom-half').removeClass('full-width');
   $('#btn-hide-map').removeClass('hidden');
   $('#btn-show-map').addClass('hidden');
-}
-
-function insert_form_header () {
-  $('.insert-form-header').empty();
-  $.get('form_header.html', function(data) {
-      $('.insert-form-header').html(data);
-  });
 }

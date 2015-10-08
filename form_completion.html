@@ -1,4 +1,10 @@
-<div class="insert-form-header"></div>
+<div class="insert-form-header">
+  <div class="form-header">
+    <a id="form-header-left" class="header-left" href="#"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="text-only"> All Tasks</span></a>
+    <div id="form-header-mid" class="header-mid">Task 2.004757383</div>
+    <a id="form-header-right" class="header-right" href="#"><span class="text-only">Details </span><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+  </div>
+</div>
 
 <div class="container container-fluid form">
   <div class="row">
@@ -6,13 +12,6 @@
     <div class="form-horizontal container"> <!--form-->
 
       <div class="col-12 col-lg-12 col-md-12 col-sm-12">
-
-        <div class="form-group">
-          <label class="col-sm-4"></label>
-          <div class="col-sm-8">
-            <a href="#" class="btn btn-default pull-right full-width" id="goto_details">Task Details <span class="glyphicon glyphicon-chevron-right"></span></a>
-          </div>
-        </div>
 
         <div class="form-group">
           <label class="col-sm-4 control-label">Category</label>
@@ -100,14 +99,9 @@
 </div>
 
 <script>
-$('#goto_task_list').on('click', insert_tasklist);
+$('#goto_task_list').on('click', insert_taskmap);
+$('#form-header-left').on('click', insert_taskmap);
+$('#form-header-right').on('click', insert_taskdetails);
 $('#goto_loe').on('click', insert_form_loe);
 $('#goto_details').on('click', insert_taskdetails);
-
-var text_header_left = "All Tasks";
-var text_header_mid = "Task 2.004757383";
-var text_header_right = "Task Details";
-
-insert_form_header();
-
 </script>

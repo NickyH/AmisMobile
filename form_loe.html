@@ -1,3 +1,10 @@
+<div class="insert-form-header">
+  <div class="form-header">
+    <a id="form-header-left" class="header-left" href="#"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="text-only"> Task 2.004757383</span></a>
+    <div id="form-header-mid" class="header-mid">LOE Task 2.004757383</div>
+  </div>
+</div>
+
 <div class="container container-fluid form">
   <div class="row">
 
@@ -102,7 +109,5 @@
 <script>
 $('#cancel_LOE').on('click', insert_form_completion);
 $('#save_LOE').on('click', insert_form_completion);
-
-var page_name = "LOE Task 2.004757383"
-update_page_name();
+$('#form-header-left').on('click', insert_form_completion);
 </script>
