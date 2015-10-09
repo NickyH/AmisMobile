@@ -43,15 +43,27 @@
 
         <div class="form-group">
           <label class="col-sm-4 control-label">Start Date/Time</label>
-          <div class="col-sm-8">
-            <input type="text" class="form-control date datepicker" />
+          <div class="col-sm-2">
+            <a href="#" class="btn btn-success full-width" id="startNow">Start Now</a> <!-- updates fields to show time now -->
+          </div>
+          <div class="col-sm-3 date">
+            <input type="text" class="form-control date datepicker" data-value="" value="" /> <!-- default today -->
+          </div>
+          <div class="col-sm-3 time">
+            <input type="text" class="form-control time timepicker" data-value="" /> <!-- default now -->
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-sm-4 control-label">End Date/Time</label>
-          <div class="col-sm-8">
-            <input type="text" class="form-control date datepicker" />
+          <div class="col-sm-2">
+            <a href="#" class="btn btn-warning full-width" id="endNow">End Now</a> <!-- updates fields to show time now -->
+          </div>
+          <div class="col-sm-3 date">
+            <input type="text" class="form-control date datepicker" data-value="" /> <!-- default today -->
+          </div>
+          <div class="col-sm-3 time">
+            <input type="text" class="form-control time timepicker" data-value="" /> <!-- default now -->
           </div>
         </div>
 
@@ -64,8 +76,18 @@
 
         <div class="form-group">
           <label class="col-sm-4 control-label">Actual Quantity</label>
-          <div class="col-sm-8">
+          <div class="col-sm-4">
             <input type="text" class="form-control" data-required="true" />
+          </div>
+          <div class="col-sm-4">
+            <select class="selectpicker show-tick form-control" data-required="true" title=''>
+              <option data-hidden="true">Select Unit of Measure</option>
+              <option>SQM</option>
+              <option>M</option>
+              <option>mm</option>
+              <option>L</option>
+              <option>mL</option>
+            </select>
           </div>
         </div>
 
@@ -86,7 +108,7 @@
         <div class="form-group">
           <label class="col-sm-4"></label>
           <div class="col-sm-8">
-            <a href="#" class="btn btn-success pull-right full-width">Complete Task</a>
+            <a href="#" class="btn btn-success pull-right full-width" disabled >Complete Task</a>
           </div>
         </div>
 
@@ -99,9 +121,29 @@
 </div>
 
 <script>
+$('.selectpicker').selectpicker();
+$('.datepicker').pickadate();
+$('.timepicker').pickatime();
 $('#goto_task_list').on('click', insert_taskmap);
 $('#form-header-left').on('click', insert_taskmap);
 $('#form-header-right').on('click', insert_taskdetails);
 $('#goto_loe').on('click', insert_form_loe);
 $('#goto_details').on('click', insert_taskdetails);
+
+// $('#startNow').on('click', insert_date_time_now);
+// $('#endNow').on('click', insert_date_time_now);
+
+var currentDate = moment().format("DD/MM/YYYY");
+var currentTime = moment().format("HH:mm");
+$('#startNow').parent().parent().children('.date').children('.date').data('value', currentDate);
+$('#endNow').parent().parent().children('.time').children('.time').data('value', currentTime);
+
+function insert_date_time_now () {
+  event.preventDefault();
+  var currentDate = moment().format("DD/MM/YYYY");
+  var currentTime = moment().format("HH:mm");
+  $(this).parent().parent().children('.date').children('.date').setAttribute('value', currentDate);
+  $(this).parent().parent().children('.time').children('.time').data('value', currentTime);
+  console.log($(this).parent().parent().children('.time').children('.time').data('value'));
+}
 </script>

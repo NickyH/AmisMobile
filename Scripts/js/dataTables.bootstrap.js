@@ -149,4 +149,3 @@ if ( $.fn.DataTable.TableTools ) {
 		}
 	} );
 }
-

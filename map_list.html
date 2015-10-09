@@ -12,8 +12,8 @@
     <button type="button" class="btn btn-default btn-sm active">All Tasks</button>
     <button type="button" class="btn btn-default btn-sm">My Tasks</button>
     <button type="button" class="btn btn-default btn-sm">Current Location</button>
-    <button type="button" class="btn btn-default btn-sm">Select All</button>
-    <button type="button" class="btn btn-default btn-sm">Deselect All</button>
+    <button type="button" class="btn btn-default btn-sm">Show Completed</button>
+    <button type="button" class="btn btn-default btn-sm">Hide Completed</button>
     <!--right align-->
     <button type="button" class="btn btn-default btn-sm pull-right" id="btn-hide-map">Hide Map</button>
     <button type="button" class="btn btn-default btn-sm pull-right hidden" id="btn-show-map">Show Map</button>
@@ -21,33 +21,124 @@
   </div>
 
   <div class="bottom-half">
+
     <div class="row">
 
-      <div class="list-group">
-        <a href="#" class="list-group-item" id="goto_completion">Task 2.0048574737</a>
-        <a href="#" class="list-group-item active">Task 2.0048574737</a>
-        <a href="#" class="list-group-item">Task 2.0048574737</a>
-        <a href="#" class="list-group-item">Task 2.0048574737</a>
-        <a href="#" class="list-group-item list-group-item-info">Task 2.0048574737</a>
-        <a href="#" class="list-group-item">Task 2.0048574737</a>
-        <a href="#" class="list-group-item">Task 2.0048574737</a>
-        <a href="#" class="list-group-item">Task 2.0048574737</a>
-        <a href="#" class="list-group-item">Task 2.0048574737</a>
-        <a href="#" class="list-group-item">Task 2.0048574737</a>
-        <a href="#" class="list-group-item">Task 2.0048574737</a>
-        <a href="#" class="list-group-item">Task 2.0048574737</a>
-        <a href="#" class="list-group-item">Task 2.0048574737</a>
-        <a href="#" class="list-group-item">Task 2.0048574737</a>
-        <a href="#" class="list-group-item">Task 2.0048574737</a>
-        <a href="#" class="list-group-item">Task 2.0048574737</a>
-        <a href="#" class="list-group-item list-group-item-info">Task 2.0048574737</a>
+      <div class="list-toolbar">
+        <button type="button" class="btn btn-default btn-sm">Select All</button>
+        <button type="button" class="btn btn-default btn-sm">Deselect All</button>
       </div>
+
+      <table id="table-task-list" class="table">
+
+        <tbody>
+          <tr>
+            <td id="goto_completion"><div>Task 2.0048574737</div></td>
+            <td><div>Complete</div></td>
+            <td><div>>></div></td>
+          </tr>
+
+          <tr>
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>>></div></td>
+          </tr>
+
+          <tr>
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>>></div></td>
+          </tr>
+
+          <tr>
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>>></div></td>
+          </tr>
+
+          <tr>
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>>></div></td>
+          </tr>
+
+          <tr>
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>>></div></td>
+          </tr>
+
+          <tr>
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>>></div></td>
+          </tr>
+
+          <tr>
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>>></div></td>
+          </tr>
+
+          <tr>
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>>></div></td>
+          </tr>
+
+          <tr>
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>>></div></td>
+          </tr>
+
+          <tr>
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>>></div></td>
+          </tr>
+
+          <tr>
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>>></div></td>
+          </tr>
+
+          <tr>
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>>></div></td>
+          </tr>
+
+          <tr>
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>>></div></td>
+          </tr>
+
+          <tr>
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>>></div></td>
+          </tr>
+
+          <tr>
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>>></div></td>
+          </tr>
+
+        </tbody>
+
+      </table>
 
     </div>
   </div>
 
 </div>
 
+
+<script src="../Scripts/js/tables.js"></script>
 
 <script>
 $('#btn-hide-map').on('click', hide_map);
