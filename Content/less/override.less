@@ -48,6 +48,13 @@ body, html {
     margin-top: 20px;
     padding-bottom: 120px;
   }
+  @media @tabletPortrait,
+  @widthNarrow,
+  @widthMedium,
+  @widthMediumLarge,
+  @widthMediumLargePlus {
+    height: 90%;
+  }
 }
 
 .container.map {
@@ -65,18 +72,25 @@ body, html {
 
 .top-half {
   height: 100%;
-  width: 60%;
+  width: 50%;
   left: 0;
   right: 0;
   top: 0;
   margin-top: -55px;
   float: left;
   margin-right: 0;
+  @media @widthLarge {
+    width: 50% !important;
+  }
   .map-container {
     margin-top: 45px;
     height: 100%;
   }
-  @media @tabletPortrait {
+  @media @tabletPortrait,
+  @widthNarrow,
+  @widthMedium,
+  @widthMediumLarge,
+  @widthMediumLargePlus {
     height: 60% !important;
     width: 100% !important;
     float: left;
@@ -97,7 +111,11 @@ body, html {
   position: fixed;
   top: 50px;
   width: 100%;
-  @media @tabletPortrait {
+  @media @tabletPortrait,
+  @widthNarrow,
+  @widthMedium,
+  @widthMediumLarge,
+  @widthMediumLargePlus {
     position: fixed;
     top: 50px;
     width: 100%;
@@ -114,7 +132,11 @@ body, html {
   &.full-width {
       width: 100% !important;
   }
-  @media @tabletPortrait {
+  @media @tabletPortrait,
+  @widthNarrow,
+  @widthMedium,
+  @widthMediumLarge,
+  @widthMediumLargePlus {
     height: 50% !important;
     width: 100% !important;
     &.full-width {
@@ -218,15 +240,50 @@ body, html {
   height: 45px;
   padding: 8px;
   z-index: 12;
-  @media @tabletPortrait {
-    position: static;
+  @media @tabletPortrait,
+  @widthNarrow,
+  @widthMedium,
+  @widthMediumLarge,
+  @widthMediumLargePlus {
+    position: fixed;
+    top: 56% !important;
+  }
+}
+
+table tr {
+  &.selected {
+    background-color: #337ab7;
+  }
+.complete_btn {
+    background-color: #5cb85c;
+    border-radius: 5px;
+    width: 23px;
+    height: 20px;
+    padding-bottom: 7px;
+    padding-left: 3px;
+    padding-right: 2px;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      background-color: darken(#5cb85c, 5%);
+    }
+    &.disabled {
+      background-color: lightgrey !important;
+      cursor: auto;
+      pointer-events: none;
+    }
   }
 }
 
 #table-task-list_wrapper {
   top: 15px;
-  @media @tabletPortrait {
-    top: -30px;
+  @media @tabletPortrait,
+  @widthNarrow,
+  @widthMedium,
+  @widthMediumLarge,
+  @widthMediumLargePlus {
+    top: 0;
+    padding-bottom: 30px;
   }
 }
 
@@ -234,9 +291,14 @@ body, html {
   position: fixed;
   z-index: 13;
   right: 1%;
-  @media @tabletPortrait {
-    position: absolute;
-    top: -10px;
+  @media @tabletPortrait,
+  @widthNarrow,
+  @widthMedium,
+  @widthMediumLarge,
+  @widthMediumLargePlus {
+    position: fixed;
+    top: 57% !important;
+
   }
   label {
     color: white;
@@ -296,4 +358,13 @@ body, html {
     color: white;
     text-decoration: none;
   }
+}
+
+.datepicker[readonly], .timepicker[readonly] {
+  cursor: auto !important;
+  background-color: white !important;
+}
+
+.btn.btn-sm {
+  border-radius: 7px;
 }

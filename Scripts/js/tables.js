@@ -16,6 +16,10 @@ $('#table-task-list').dataTable({
     {
       "class": "remove-sort",
       "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
     }
   ]
 });

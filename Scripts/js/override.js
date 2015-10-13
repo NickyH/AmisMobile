@@ -90,3 +90,7 @@ function show_map() {
   $('#btn-hide-map').removeClass('hidden');
   $('#btn-show-map').addClass('hidden');
 }
+
+function toggle_row_select () {
+  $(this).toggleClass('selected');
+}
