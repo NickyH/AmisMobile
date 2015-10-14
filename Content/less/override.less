@@ -273,6 +273,41 @@ table tr {
       pointer-events: none;
     }
   }
+  .table_btn {
+    &.complete {
+      background-color: #5cb85c;
+      &:hover {
+        background-color: darken(#5cb85c, 5%);
+      }
+    }
+    &.edit {
+      background-color: #f0ad4e;
+      padding-left: 4px !important;
+      &:hover {
+        background-color: darken(#f0ad4e, 5%);
+      }
+    }
+    &.delete {
+      background-color: #d9534f;
+      padding-left: 4px !important;
+      &:hover {
+        background-color: darken(#d9534f, 5%);
+      }
+    }
+    border-radius: 5px;
+    width: 23px;
+    height: 20px;
+    padding-bottom: 7px;
+    padding-left: 3px;
+    padding-right: 2px;
+    color: white;
+    cursor: pointer;
+    &.disabled {
+      background-color: lightgrey !important;
+      cursor: auto;
+      pointer-events: none;
+    }
+  }
 }
 
 #table-task-list_wrapper {
