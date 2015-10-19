@@ -62,6 +62,13 @@ function insert_form_loe() {
   });
 }
 
+function insert_form_prestart() {
+  $('#body-content').empty();
+  $.get('form_prestart.html', function(data) {
+      $('#body-content').html(data);
+  });
+}
+
 function insert_top_bar() {
   $.get('top_bar.html', function(data) {
       $('#insert-top').html(data);

@@ -14,6 +14,13 @@
       <div class="col-12 col-lg-12 col-md-12 col-sm-12">
 
         <div class="form-group">
+          <label class="col-sm-4"></label>
+          <div class="col-sm-8">
+            <a href="#" class="btn btn-info pull-right full-width" id="goto_prestart">Pre-Start Check</a>
+          </div>
+        </div>
+
+        <div class="form-group">
           <label class="col-sm-4 control-label">Category</label>
           <div class="col-sm-8">
             <input type="text" class="form-control" data-required="true" disabled value="1234">
@@ -44,26 +51,26 @@
         <div class="form-group">
           <label class="col-sm-4 control-label">Start Date/Time</label>
           <!-- <div class="col-sm-2">
-            <a href="#" class="btn btn-success full-width" id="startNow">Start Now</a> <!-- updates fields to show time now
+            <a href="#" class="btn btn-success full-width" id="startNow">Start Now</a>
           </div> -->
           <div class="col-sm-4 date">
-            <input type="text" class="form-control date datepicker start" data-value="" value="" /> <!-- default today -->
+            <input type="text" class="form-control date datepicker start" data-value="" value="" />
           </div>
           <div class="col-sm-4 time">
-            <input type="text" class="form-control time timepicker start" data-value="" /> <!-- default now -->
+            <input type="text" class="form-control time timepicker start" data-value="" />
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-sm-4 control-label">End Date/Time</label>
-         <!--  <div class="col-sm-2">
-            <a href="#" class="btn btn-warning full-width" id="endNow">End Now</a> <!-- updates fields to show time now
-          </div> -->
-          <div class="col-sm-4 date">
-            <input type="text" class="form-control date datepicker end" data-value="" /> <!-- default today -->
+          <!-- <div class="col-sm-2">
+            <a href="#" class="btn btn-warning full-width" id="endNow">End Now</a>
+          </div>
+ -->          <div class="col-sm-4 date">
+            <input type="text" class="form-control date datepicker end" data-value="" />
           </div>
           <div class="col-sm-4 time">
-            <input type="text" class="form-control time timepicker end" data-value="" /> <!-- default now -->
+            <input type="text" class="form-control time timepicker end" data-value="" />
           </div>
         </div>
 
@@ -76,18 +83,11 @@
 
         <div class="form-group">
           <label class="col-sm-4 control-label">Actual Quantity</label>
-          <div class="col-sm-4">
+          <div class="col-sm-6">
             <input type="text" class="form-control" data-required="true" />
           </div>
-          <div class="col-sm-4">
-            <select class="selectpicker show-tick form-control" data-required="true" title=''>
-              <option data-hidden="true">Select Unit of Measure</option>
-              <option>SQM</option>
-              <option>M</option>
-              <option>mm</option>
-              <option>L</option>
-              <option>mL</option>
-            </select>
+          <div class="col-sm-2">
+            <input type="text" class="form-control" data-required="true" disabled value="SQM" />
           </div>
         </div>
 
@@ -108,7 +108,7 @@
         <div class="form-group">
           <label class="col-sm-4"></label>
           <div class="col-sm-8">
-            <a href="#" class="btn btn-success pull-right full-width" disabled >Complete Task</a>
+            <a href="#" class="btn btn-success pull-right full-width" id="complete_task" >Complete Task</a>
           </div>
         </div>
 
@@ -123,29 +123,114 @@
 <script>
 $('.selectpicker').selectpicker();
 $('.datepicker').pickadate();
-$('.timepicker').pickatime();
+$('.timepicker').pickatime({
+  interval: 5
+});
+
+$('#goto_prestart').on('click', insert_popup_prestart);
+$('#complete_task').on('click', insert_popup_complete);
+
 $('#goto_task_list').on('click', insert_taskmap);
 $('#form-header-left').on('click', insert_taskmap);
 $('#form-header-right').on('click', insert_taskdetails);
 $('#goto_loe').on('click', insert_form_loe);
+// $('#goto_prestart').on('click', insert_form_prestart);
 $('#goto_details').on('click', insert_taskdetails);
 
-//start date
-var $input = $('.datepicker.start').pickadate();
-var picker = $input.pickadate('picker');
-picker.set('select', new Date('today'));
-//start time
-var $input_time = $('.timepicker.start').pickatime();
-var picker_time = $input_time.pickatime('picker');
-picker_time.set('select', 'now', { format: 'hh-i' });
+// $('#startNow').on('click', insert_start_time);
+// $('#endNow').on('click', insert_end_time);
 
-//end date
-var $input_end = $('.datepicker.end').pickadate();
-var picker_end = $input_end.pickadate('picker');
-picker_end.set('select', new Date('today'));
-//end time
-var $input_time_end = $('.timepicker.end').pickatime();
-var picker_time_end = $input_time_end.pickatime('picker');
-picker_time_end.set('select', 'now', { format: 'hh-i' });
+//start date/time
+var $input = $('.datepicker.start').pickadate();
+  var picker = $input.pickadate('picker');
+  picker.set('select', new Date('today'));
+  //start time
+  var $input_time = $('.timepicker.start').pickatime();
+  var picker_time = $input_time.pickatime('picker');
+  picker_time.set('select', 'now', { format: 'hh-i' });
+
+//end date/time
+  var $input_end = $('.datepicker.end').pickadate();
+  var picker_end = $input_end.pickadate('picker');
+  picker_end.set('select', new Date('today'));
+  //end time
+  var $input_time_end = $('.timepicker.end').pickatime();
+  var picker_time_end = $input_time_end.pickatime('picker');
+  picker_time_end.set('select', 'now', { format: 'hh-i' });
+
+
+
+function insert_popup_prestart() {
+  bootbox.dialog({
+  message: '<div class="form-group">' +
+          '<label class="col-sm-4 control-label">Enter Start Date/Time</label> ' +
+          '<div class="col-sm-4 date">' +
+            '<input type="text" class="form-control date datepicker start" data-value="" value="" /> ' +
+          '</div> ' +
+          '<div class="col-sm-4 time"> ' +
+            '<input type="text" class="form-control time timepicker start" data-value="" /> ' +
+          '</div> ' +
+          '</div>' +
+          '<br/><br/><br/><br/><label class="col-sm-12 control-label">Have you completed a job site risk assessment for this task? </label> ',
+  title: "Task Pre-Start",
+    buttons: {
+      danger: {
+        label: "No, cancel",
+        className: "btn-danger",
+        callback: function() {
+          bootbox.hideAll();
+        }
+      },
+      success: {
+        label: "Yes, start task",
+        className: "btn-success",
+        callback: function() {
+          // insert 'delete function' here
+        }
+      }
+    }
+  });
+  $('.datepicker').pickadate();
+  $('.timepicker').pickatime({
+    interval: 5
+  });
+}
+
+
+function insert_popup_complete() {
+  bootbox.dialog({
+  message: '<div class="form-group">' +
+          '<label class="col-sm-4 control-label">Enter End Date/Time</label> ' +
+          '<div class="col-sm-4 date">' +
+            '<input type="text" class="form-control date datepicker start" data-value="" value="" /> ' +
+          '</div> ' +
+          '<div class="col-sm-4 time"> ' +
+            '<input type="text" class="form-control time timepicker start" data-value="" /> ' +
+          '</div> ' +
+          '</div>' +
+          '<br/><br/><br/><br/><label class="col-sm-12 control-label">Have you completed this task? </label> ',
+  title: "Task Complete",
+    buttons: {
+      danger: {
+        label: "No, cancel",
+        className: "btn-danger",
+        callback: function() {
+          bootbox.hideAll();
+        }
+      },
+      success: {
+        label: "Yes, complete task",
+        className: "btn-success",
+        callback: function() {
+          insert_taskmap();
+        }
+      }
+    }
+  });
+  $('.datepicker').pickadate();
+  $('.timepicker').pickatime({
+    interval: 5
+  });
+}
 
 </script>

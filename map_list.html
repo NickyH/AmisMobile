@@ -9,14 +9,14 @@
 
   <div class="map-toolbar">
 
-    <button type="button" class="btn btn-default btn-sm active">All Tasks</button>
-    <button type="button" class="btn btn-default btn-sm">My Tasks</button>
+    <button type="button" class="btn btn-default btn-sm selected" id="btn-all-tasks">All Tasks</button>
+    <button type="button" class="btn btn-default btn-sm" id="btn-my-tasks">My Tasks</button>
     <button type="button" class="btn btn-default btn-sm">Current Location</button>
-    <button type="button" class="btn btn-default btn-sm">Show Completed</button>
-    <button type="button" class="btn btn-default btn-sm">Hide Completed</button>
+    <button type="button" class="btn btn-default btn-sm selected" id="btn-show-comp">Show Completed</button>
+    <button type="button" class="btn btn-default btn-sm hidden" id="btn-hide-comp">Hide Completed</button>
     <!--right align-->
-    <button type="button" class="btn btn-default btn-sm pull-right" id="btn-hide-map">Hide Map</button>
-    <button type="button" class="btn btn-default btn-sm pull-right hidden" id="btn-show-map">Show Map</button>
+    <button type="button" class="btn btn-default btn-sm" id="btn-hide-map">Hide Map</button>
+    <button type="button" class="btn btn-default btn-sm hidden" id="btn-show-map">Show Map</button>
 
   </div>
 
@@ -24,27 +24,21 @@
 
     <div class="row">
 
-      <div class="list-toolbar">
-        <button type="button" class="btn btn-default btn-sm">Select All</button>
-        <button type="button" class="btn btn-default btn-sm">Deselect All</button>
-        <button type="button" class="btn btn-success btn-sm">Add To My Tasks</button>
-      </div>
-
       <table id="table-task-list" class="table">
 
         <tbody>
-          <tr>
+          <tr class="selected">
             <td><div>Task 2.0048574737</div></td>
             <td><div>Complete</div></td>
             <td><div>N Hughes</div></td>
-            <td><div class="table_btn complete">>></div></td>
+            <td><div class="table_btn complete" title="pre-start">>></div></td>
           </tr>
 
-          <tr>
+          <tr class="selected">
             <td><div>Task 2.0048574457</div></td>
             <td><div>Not Done</div></td>
             <td><div>N Hughes</div></td>
-            <td><div class="table_btn complete">>></div></td>
+            <td><div class="table_btn complete" title="pre-start">>></div></td>
           </tr>
 
           <tr>
@@ -58,7 +52,21 @@
             <td><div>Task 2.0048574457</div></td>
             <td><div>Not Done</div></td>
             <td><div>D Smith</div></td>
-            <td><div class="table_btn complete disabled">>></div></td>
+            <td><div class="table_btn complete">>></div></td>
+          </tr>
+
+          <tr class="selected">
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>N Hughes</div></td>
+            <td><div class="table_btn complete" title="pre-start">>></div></td>
+          </tr>
+
+          <tr class="selected">
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>N Hughes</div></td>
+            <td><div class="table_btn complete">>></div></td>
           </tr>
 
           <tr>
@@ -72,45 +80,45 @@
             <td><div>Task 2.0048574457</div></td>
             <td><div>Not Done</div></td>
             <td><div>J Moore</div></td>
-            <td><div class="table_btn complete disabled">>></div></td>
-          </tr>
-
-          <tr>
-            <td><div>Task 2.0048574457</div></td>
-            <td><div>Not Done</div></td>
-            <td><div>D Smith</div></td>
-            <td><div class="table_btn complete disabled">>></div></td>
-          </tr>
-
-          <tr>
-            <td><div>Task 2.0048574457</div></td>
-            <td><div>Not Done</div></td>
-            <td><div>D Smith</div></td>
-            <td><div class="table_btn complete disabled">>></div></td>
-          </tr>
-
-          <tr>
-            <td><div>Task 2.0048574457</div></td>
-            <td><div>Not Done</div></td>
-            <td><div>D Smith</div></td>
-            <td><div class="table_btn complete disabled">>></div></td>
-          </tr>
-
-          <tr>
-            <td><div>Task 2.0048574457</div></td>
-            <td><div>Not Done</div></td>
-            <td><div>N Hughes</div></td>
             <td><div class="table_btn complete">>></div></td>
           </tr>
 
           <tr>
             <td><div>Task 2.0048574457</div></td>
             <td><div>Not Done</div></td>
-            <td><div>N Hughes</div></td>
+            <td><div>D Smith</div></td>
             <td><div class="table_btn complete">>></div></td>
           </tr>
 
           <tr>
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>D Smith</div></td>
+            <td><div class="table_btn complete">>></div></td>
+          </tr>
+
+          <tr>
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>D Smith</div></td>
+            <td><div class="table_btn complete">>></div></td>
+          </tr>
+
+          <tr class="selected">
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>N Hughes</div></td>
+            <td><div class="table_btn complete">>></div></td>
+          </tr>
+
+          <tr class="selected">
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>N Hughes</div></td>
+            <td><div class="table_btn complete">>></div></td>
+          </tr>
+
+          <tr class="selected">
             <td><div>Task 2.0048574457</div></td>
             <td><div>Not Done</div></td>
             <td><div>N Hughes</div></td>
@@ -128,7 +136,7 @@
             <td><div>Task 2.0048574457</div></td>
             <td><div>Not Done</div></td>
             <td><div>D Smith</div></td>
-            <td><div class="table_btn complete disabled">>></div></td>
+            <td><div class="table_btn complete">>></div></td>
           </tr>
 
           <tr>
@@ -142,84 +150,91 @@
             <td><div>Task 2.0048574457</div></td>
             <td><div>Not Done</div></td>
             <td><div>D Smith</div></td>
-            <td><div class="table_btn complete disabled">>></div></td>
+            <td><div class="table_btn complete">>></div></td>
           </tr>
 
           <tr>
             <td><div>Task 2.0048574457</div></td>
             <td><div>Not Done</div></td>
             <td><div>D Smith</div></td>
-            <td><div class="table_btn complete disabled">>></div></td>
+            <td><div class="table_btn complete">>></div></td>
           </tr>
 
           <tr>
             <td><div>Task 2.0048574457</div></td>
             <td><div>Not Done</div></td>
             <td><div>D Smith</div></td>
-            <td><div class="table_btn complete disabled">>></div></td>
+            <td><div class="table_btn complete">>></div></td>
+          </tr>
+
+          <tr class="selected">
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>N Hughes</div></td>
+            <td><div class="table_btn complete">>></div></td>
+          </tr>
+
+          <tr class="selected">
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>N Hughes</div></td>
+            <td><div class="table_btn complete">>></div></td>
           </tr>
 
           <tr>
             <td><div>Task 2.0048574457</div></td>
             <td><div>Not Done</div></td>
             <td><div>D Smith</div></td>
-            <td><div class="table_btn complete disabled">>></div></td>
+            <td><div class="table_btn complete">>></div></td>
           </tr>
 
           <tr>
             <td><div>Task 2.0048574457</div></td>
             <td><div>Not Done</div></td>
             <td><div>D Smith</div></td>
-            <td><div class="table_btn complete disabled">>></div></td>
+            <td><div class="table_btn complete">>></div></td>
+          </tr>
+
+          <tr class="selected">
+            <td><div>Task 2.0048574457</div></td>
+            <td><div>Not Done</div></td>
+            <td><div>N Hughes</div></td>
+            <td><div class="table_btn complete">>></div></td>
           </tr>
 
           <tr>
             <td><div>Task 2.0048574457</div></td>
             <td><div>Not Done</div></td>
             <td><div>D Smith</div></td>
-            <td><div class="table_btn complete disabled">>></div></td>
+            <td><div class="table_btn complete">>></div></td>
           </tr>
 
           <tr>
             <td><div>Task 2.0048574457</div></td>
             <td><div>Not Done</div></td>
             <td><div>D Smith</div></td>
-            <td><div class="table_btn complete disabled">>></div></td>
+            <td><div class="table_btn complete">>></div></td>
           </tr>
 
           <tr>
             <td><div>Task 2.0048574457</div></td>
             <td><div>Not Done</div></td>
             <td><div>D Smith</div></td>
-            <td><div class="table_btn complete disabled">>></div></td>
+            <td><div class="table_btn complete">>></div></td>
           </tr>
 
           <tr>
             <td><div>Task 2.0048574457</div></td>
             <td><div>Not Done</div></td>
             <td><div>D Smith</div></td>
-            <td><div class="table_btn complete disabled">>></div></td>
+            <td><div class="table_btn complete">>></div></td>
           </tr>
 
           <tr>
             <td><div>Task 2.0048574457</div></td>
             <td><div>Not Done</div></td>
             <td><div>D Smith</div></td>
-            <td><div class="table_btn complete disabled">>></div></td>
-          </tr>
-
-          <tr>
-            <td><div>Task 2.0048574457</div></td>
-            <td><div>Not Done</div></td>
-            <td><div>D Smith</div></td>
-            <td><div class="table_btn complete disabled">>></div></td>
-          </tr>
-
-          <tr>
-            <td><div>Task 2.0048574457</div></td>
-            <td><div>Not Done</div></td>
-            <td><div>D Smith</div></td>
-            <td><div class="table_btn complete disabled">>></div></td>
+            <td><div class="table_btn complete">>></div></td>
           </tr>
 
         </tbody>
@@ -235,12 +250,39 @@
 <script src="../Scripts/js/tables.js"></script>
 
 <script>
-$('#table-task-list tr').on('click', toggle_row_select);
-
 $('#btn-hide-map').on('click', hide_map);
 $('#btn-show-map').on('click', show_map);
 
+$('#btn-all-tasks').on('click', toggle_my_tasks);
+
+function toggle_my_tasks() {
+  $(this).toggleClass('selected');
+}
+
+$('#btn-show-comp').on('click', show_completed);
+$('#btn-hide-comp').on('click', hide_completed);
+
 $('.table_btn.complete').on('click', insert_form_completion);
+
+$('div.dataTables_filter input').attr('placeholder', 'Search...');
+
+function toggle_btn_select() {
+  $(this).toggleClass('selected');
+}
+
+function show_completed() {
+  $(this).addClass('hidden');
+  $(this).removeClass('selected');
+  $('#btn-hide-comp').removeClass('hidden');
+  $('#btn-hide-comp').addClass('selected');
+}
+
+function hide_completed() {
+  $(this).addClass('hidden');
+  $(this).removeClass('selected');
+  $('#btn-show-comp').removeClass('hidden');
+  $('#btn-show-comp').addClass('selected');
+}
 
 var page_name = "Task Map"
 update_page_name();

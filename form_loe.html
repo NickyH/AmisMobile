@@ -28,18 +28,11 @@
 
         <div class="form-group">
           <label class="col-sm-4 control-label">Actual Quantity</label>
-          <div class="col-sm-4">
+          <div class="col-sm-6">
             <input id="input_loe_qty" type="text" class="form-control" data-required="true" />
           </div>
-          <div class="col-sm-4">
-            <select id="input_loe_uom" class="selectpicker show-tick form-control" data-required="true" title=''>
-              <option data-hidden="true">Select Unit of Measure</option>
-              <option>SQM</option>
-              <option>M</option>
-              <option>mm</option>
-              <option>L</option>
-              <option>mL</option>
-            </select>
+          <div class="col-sm-2">
+            <input id="input_loe_uom" type="text" class="form-control" data-required="true" disabled value="SQM" />
           </div>
         </div>
 
@@ -149,7 +142,8 @@ function toggle_save_loe() {
   $('#input_loe_group').attr('value','');
   $('#input_loe_item').attr('value','');
   $('#input_loe_qty').attr('value','');
-  $('#input_loe_uom').next('.btn-group').children('button').children('.filter-option').text('Select Unit of Measure')
+  $('#input_loe_uom').attr('value','');
+  // $('#input_loe_uom').next('.btn-group').children('button').children('.filter-option').text('Select Unit of Measure')
 }
 
 function edit_loe() {
@@ -161,7 +155,8 @@ function edit_loe() {
   $('#input_loe_group').attr('value', group);
   $('#input_loe_item').attr('value', item);
   $('#input_loe_qty').attr('value', qty);
-  $('#input_loe_uom').next('.btn-group').children('button').children('.filter-option').text(uom);
+  $('#input_loe_uom').attr('value', uom);
+  // $('#input_loe_uom').next('.btn-group').children('button').children('.filter-option').text(uom);
 }
 
 function delete_loe() {
