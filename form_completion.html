@@ -50,27 +50,27 @@
 
         <div class="form-group">
           <label class="col-sm-4 control-label">Start Date/Time</label>
-          <!-- <div class="col-sm-2">
-            <a href="#" class="btn btn-success full-width" id="startNow">Start Now</a>
-          </div> -->
-          <div class="col-sm-4 date">
+          <div class="col-sm-3 date">
             <input type="text" class="form-control date datepicker start" data-value="" value="" />
           </div>
-          <div class="col-sm-4 time">
+          <div class="col-sm-3 time">
             <input type="text" class="form-control time timepicker start" data-value="" />
+          </div>
+          <div class="col-sm-2">
+            <a href="#" class="btn btn-warning full-width" id="edit-start">Edit Start Time</a>
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-sm-4 control-label">End Date/Time</label>
-          <!-- <div class="col-sm-2">
-            <a href="#" class="btn btn-warning full-width" id="endNow">End Now</a>
-          </div>
- -->          <div class="col-sm-4 date">
+          <div class="col-sm-3 date">
             <input type="text" class="form-control date datepicker end" data-value="" />
           </div>
-          <div class="col-sm-4 time">
+          <div class="col-sm-3 time">
             <input type="text" class="form-control time timepicker end" data-value="" />
+          </div>
+          <div class="col-sm-2">
+            <a href="#" class="btn btn-warning full-width disabled" id="edit-end">Edit End Time</a>
           </div>
         </div>
 
@@ -134,44 +134,41 @@ $('#goto_task_list').on('click', insert_taskmap);
 $('#form-header-left').on('click', insert_taskmap);
 $('#form-header-right').on('click', insert_taskdetails);
 $('#goto_loe').on('click', insert_form_loe);
-// $('#goto_prestart').on('click', insert_form_prestart);
 $('#goto_details').on('click', insert_taskdetails);
 
-// $('#startNow').on('click', insert_start_time);
-// $('#endNow').on('click', insert_end_time);
+$('#edit-start').on('click', enable_edit_datetime);
+$('#edit-end').on('click', enable_edit_datetime);
 
-//start date/time
-var $input = $('.datepicker.start').pickadate();
-  var picker = $input.pickadate('picker');
-  picker.set('select', new Date('today'));
-  //start time
-  var $input_time = $('.timepicker.start').pickatime();
-  var picker_time = $input_time.pickatime('picker');
-  picker_time.set('select', 'now', { format: 'hh-i' });
+//insert existing start date/time
+//instead of 'now' use the existing start time already saved by user
+    var $input = $('.datepicker.start').pickadate();
+    var picker = $input.pickadate('picker');
+    picker.set('select', new Date('15 October, 2015'));
+    // picker.set('select', new Date('today'));
+    var $input_time = $('.timepicker.start').pickatime();
+    var picker_time = $input_time.pickatime('picker');
+    // picker_time.set('select', 'now', { format: 'hh-i' });
+    picker_time.set('select', '10:30', { format: 'hh-i' });
 
 //end date/time
-  var $input_end = $('.datepicker.end').pickadate();
-  var picker_end = $input_end.pickadate('picker');
-  picker_end.set('select', new Date('today'));
-  //end time
-  var $input_time_end = $('.timepicker.end').pickatime();
-  var picker_time_end = $input_time_end.pickatime('picker');
-  picker_time_end.set('select', 'now', { format: 'hh-i' });
+//only useful for future form edit functionality after completion is saved
+//instead of 'now' use the existing end time already saved by user
+    // var $input_end = $('.datepicker.end').pickadate();
+    // var picker_end = $input_end.pickadate('picker');
+    // picker_end.set('select', new Date('today'));
+    // var $input_time_end = $('.timepicker.end').pickatime();
+    // var picker_time_end = $input_time_end.pickatime('picker');
+    // picker_time_end.set('select', 'now', { format: 'hh-i' });
 
 
 
 function insert_popup_prestart() {
   bootbox.dialog({
-  message: '<div class="form-group">' +
-          '<label class="col-sm-4 control-label">Enter Start Date/Time</label> ' +
-          '<div class="col-sm-4 date">' +
-            '<input type="text" class="form-control date datepicker start" data-value="" value="" /> ' +
-          '</div> ' +
-          '<div class="col-sm-4 time"> ' +
-            '<input type="text" class="form-control time timepicker start" data-value="" /> ' +
-          '</div> ' +
-          '</div>' +
-          '<br/><br/><br/><br/><label class="col-sm-12 control-label">Have you completed a job site risk assessment for this task? </label> ',
+  message: function() {
+      $.get('popup_prestart.html', function(data) {
+        $('.modal-body').html(data);
+    });
+  },
   title: "Task Pre-Start",
     buttons: {
       danger: {
@@ -198,17 +195,12 @@ function insert_popup_prestart() {
 
 
 function insert_popup_complete() {
-  bootbox.dialog({
-  message: '<div class="form-group">' +
-          '<label class="col-sm-4 control-label">Enter End Date/Time</label> ' +
-          '<div class="col-sm-4 date">' +
-            '<input type="text" class="form-control date datepicker start" data-value="" value="" /> ' +
-          '</div> ' +
-          '<div class="col-sm-4 time"> ' +
-            '<input type="text" class="form-control time timepicker start" data-value="" /> ' +
-          '</div> ' +
-          '</div>' +
-          '<br/><br/><br/><br/><label class="col-sm-12 control-label">Have you completed this task? </label> ',
+  var start_modal = bootbox.dialog({
+  message: function() {
+      $.get('popup_endtask.html', function(data) {
+        $('.modal-body').html(data);
+    });
+  },
   title: "Task Complete",
     buttons: {
       danger: {
@@ -233,4 +225,9 @@ function insert_popup_complete() {
   });
 }
 
+
+function enable_edit_datetime() {
+  event.preventDefault();
+  $(this).parent().parent().children().children('input').attr('readonly', false);
+}
 </script>

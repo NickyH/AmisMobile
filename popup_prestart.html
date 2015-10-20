@@ -1,0 +1,34 @@
+<div class="form-group">
+  <div class="col-sm-4">
+    <a href="#" class="btn btn-primary full-width" id="startNow">Set Start Time</a>
+  </div>
+  <div class="col-sm-4 date">
+    <input type="text" class="form-control date datepicker start" data-value="" value="" />
+  </div>
+  <div class="col-sm-4 time">
+    <input type="text" class="form-control time timepicker start" data-value="" />
+  </div>
+</div>
+
+<br/><br/><br/><br/><label class="col-sm-12 control-label">Have you completed a job site risk assessment for this task? </label>
+
+<script>
+$('.datepicker').pickadate();
+$('.timepicker').pickatime({
+  interval: 5
+});
+
+$('#startNow').on('click', insert_start_time);
+
+function insert_start_time() {
+  //start date/time
+  var $input = $('.bootbox .datepicker.start').pickadate();
+  var picker = $input.pickadate('picker');
+  picker.set('select', new Date('today'));
+  //start time
+  var $input_time = $('.bootbox .timepicker.start').pickatime();
+  var picker_time = $input_time.pickatime('picker');
+  picker_time.set('select', 'now', { format: 'hh-i' });
+}
+
+</script>

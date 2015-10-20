@@ -1,0 +1,33 @@
+<div class="form-group">
+  <div class="col-sm-4">
+    <a href="#" class="btn btn-primary full-width" id="endNow">Set End Time</a>
+  </div>
+  <div class="col-sm-4 date">
+    <input type="text" class="form-control date datepicker end" data-value="" value="" />
+  </div>
+  <div class="col-sm-4 time">
+    <input type="text" class="form-control time timepicker end" data-value="" />
+  </div>
+</div>
+
+<br/><br/><br/><br/><label class="col-sm-12 control-label">Have you completed this task? </label>
+
+<script>
+$('.datepicker').pickadate();
+$('.timepicker').pickatime({
+  interval: 5
+});
+
+$('#endNow').on('click', insert_end_time);
+
+function insert_end_time() {
+  //end date/time
+  var $input_end = $('.bootbox .datepicker.end').pickadate();
+  var picker_end = $input_end.pickadate('picker');
+  picker_end.set('select', new Date('today'));
+  //end time
+  var $input_time_end = $('.bootbox .timepicker.end').pickatime();
+  var picker_time_end = $input_time_end.pickatime('picker');
+  picker_time_end.set('select', 'now', { format: 'hh-i' });
+}
+</script>
